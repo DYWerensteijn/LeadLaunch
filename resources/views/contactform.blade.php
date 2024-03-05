@@ -1,6 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{-- translatable tag --}}
             {{ __('formulier') }}
         </h2>
     </x-slot>
@@ -9,32 +10,42 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div>
+                        @if($errors->any())
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+
+                            @endforeach
+                        </ul>
+                        @endif
+                    </div>
                     <form method="post" action="{{route('contacten.store')}}">
                         @csrf
                         @method('post')
                         <div>
                             <label>Naam</label>
-                            <input type="text" name="name" placeholder="Naam">
+                            <input type="text" name="name" placeholder="John Doe">
                         </div>
                         <div>
                             <label>E-mail</label>
-                            <input type="text" name="e-mail" placeholder="E-mail">
+                            <input type="text" name="e-mail" placeholder="voorbeeld@mailservice.com">
                         </div>
                         <div>
                             <label>Telefoonnummer</label>
-                            <input type="text" name="phone_number" placeholder="Telefoonnummer">
+                            <input type="tel" name="phone_number" maxlength="10" placeholder="0612345678">
                         </div>
                         <div>
                             <label>Primair bedrijf</label>
-                            <input type="text" name="primary_company" placeholder="Primair bedrijf">
+                            <input type="text" name="primary_company" placeholder="Bedrijf">
                         </div>
                         <div>
                             <label>Plaatsnaam</label>
-                            <input type="text" name="city" placeholder="Plaatsnaam">
+                            <input type="text" name="city" placeholder="Voorbeeldstad">
                         </div>
                         <div>
                             <label>Eigenaar contact</label>
-                            <input type="text" name="contact_owner" placeholder="Eigenaar contact">
+                            <input type="text" name="contact_owner" placeholder="Jane Doe">
                         </div>
                         <div>
                             <label>Status lead</label>

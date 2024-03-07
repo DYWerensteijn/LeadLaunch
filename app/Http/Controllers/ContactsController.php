@@ -11,7 +11,7 @@ class ContactsController extends Controller
         $data = $request->validate([
         'name' => 'required',
         'e-mail' => 'required|email',
-        'phone_number' => 'required|integer|size:10',
+        'phone_number' => 'required|numeric',
         'primary_company' => 'required',
         'city' => 'required',
         'contact_owner' => 'required',

@@ -19,7 +19,63 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
-                        <button  type="button" onclick="">Click me!</button>
+                        <button id="showFormBtn">Show Form</button>
+
+                        <div id="formContainer" class="hidden">
+                            <form id="myForm" action="{{ route('contacten.store') }}" method="POST">
+                                @csrf
+                                @method('post')
+                                    <div>
+                                        <label>Naam</label>
+                                        <input type="text" name="name" placeholder="John Doe">
+                                    </div>
+                                    <div>
+                                        <label>E-mail</label>
+                                        <input type="text" name="e-mail" placeholder="voorbeeld@mailservice.com">
+                                    </div>
+                                    <div>
+                                        <label>Telefoonnummer</label>
+                                        <input type="tel" name="phone_number" maxlength="10" placeholder="0612345678">
+                                    </div>
+                                    <div>
+                                        <label>Primair bedrijf</label>
+                                        <input type="text" name="primary_company" placeholder="Bedrijf">
+                                    </div>
+                                    <div>
+                                        <label>Plaatsnaam</label>
+                                        <input type="text" name="city" placeholder="Voorbeeldstad">
+                                    </div>
+                                    <div>
+                                        <label>Eigenaar contact</label>
+                                        <input type="text" name="contact_owner" placeholder="Jane Doe">
+                                    </div>
+                                    <div>
+                                        <label>Status lead</label>
+                                        <select name="lead_status">
+                                            <option value="nieuw">Nieuw</option>
+                                            <option value="openen">Openen</option>
+                                            <option value="in behandeling">In behandeling</option>
+                                            <option value="deal openen">Deal openen</option>
+                                            <option value="ongekwalificeerd">Ongekwalificeerd</option>
+                                            <option value="geprobeerd contact op te nemen met">Geprobeerd contact op te nemen met</option>
+                                            <option value="verbonden">Verbonden</option>
+                                            <option value="slechte timing">Slechte timing</option>
+                                        </select>
+                                     </div>
+                                <input type="submit" value="sla contact op">
+                            </form>
+                            <div>
+                                @if($errors->any())
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{$error}}</li>
+                                    @endforeach
+                                </ul>
+
+                                @else
+                                @endif
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -30,3 +86,42 @@
 
 </body>
 </html>
+
+
+
+<script>
+    document.getElementById('showFormBtn').addEventListener('click', function() {
+    var formContainer = document.getElementById('formContainer');
+    formContainer.classList.remove('hidden');
+    formContainer.style.right = '0'; // Slide form into view
+});
+
+document.getElementById('myForm').addEventListener('submit', function() {
+    var formContainer = document.getElementById('formContainer');
+    formContainer.style.right = '-40%'; // Slide form away
+});
+</script>
+
+<style>
+    #formContainer {
+    position: fixed;
+    top: 0;
+    transition: right 0.3s ease-in-out; /* Transition effect */
+    background-color: #4b6b64;
+    width: 40%;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+label, input, select{
+    width: 40%;
+    margin-right: 200px;
+}
+
+
+</style>

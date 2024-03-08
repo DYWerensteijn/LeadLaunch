@@ -27,10 +27,6 @@ Route::get('/contacten', function () {
     return view('contacten');
 })->middleware(['auth', 'verified'])->name('contacten');
 
-Route::get('/contacten/contactform', function () {
-    return view('contactform');
-})->middleware(['auth', 'verified'])->name('contacten.contactform');
-
 Route::post('/contacten',[ContactsController::class, 'store'], function () {
     return view('contacten');
 })->middleware(['auth', 'verified'])->name('contacten.store');

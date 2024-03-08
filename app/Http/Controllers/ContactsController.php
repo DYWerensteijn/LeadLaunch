@@ -7,6 +7,12 @@ use App\Models\Contacts;
 
 class ContactsController extends Controller
 {
+
+    public function contacten(){
+        $contacts = Contacts::all();
+        return route('contacten', ['contacten' => $contacts]);
+    }
+
     public function store(Request $request){
         $data = $request->validate([
         'name' => 'required',

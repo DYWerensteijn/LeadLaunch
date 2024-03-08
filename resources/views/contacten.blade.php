@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contacten</title>
-</head>
-<body>
     <x-app-layout>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -62,7 +53,9 @@
                                             <option value="slechte timing">Slechte timing</option>
                                         </select>
                                      </div>
-                                <input type="submit" value="sla contact op">
+                                     <button class="btn btn-primary">
+                                             <input type="submit" value="sla contact op">
+                                    </button>
                             </form>
                             <div>
                                 @if($errors->any())
@@ -76,17 +69,33 @@
                                 @endif
                             </div>
                         </div>
+                        <table border="3">
+                            <tr>
+                                <th>Naam</th>
+                                <th>E-mail</th>
+                                <th>Telefoonnummer</th>
+                                <th>Primair bedrijf</th>
+                                <th>Plaatsnaam</th>
+                                <th>Eigenaar contact</th>
+                                <th>Status lead</th>
+                            </tr>
+                            {{-- @foreach($contacts as $contact)
+                            <tr>
+                                <td>{{ $contact->name }}</td>
+                                <td>{{ $contact->email }}</td>
+                                <td>{{ $contact->phone_number }}</td>
+                                <td>{{ $contact->primary_company }}</td>
+                                <td>{{ $contact->city }}</td>
+                                <td>{{ $contact->contact_owner }}</td>
+                                <td>{{ $contact->lead_status }}</td>
+                            </tr>
+                            @endforeach --}}
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </x-app-layout>
-
-
-
-</body>
-</html>
-
 
 
 <script>
@@ -114,6 +123,11 @@ document.getElementById('myForm').addEventListener('submit', function() {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
+#saveForm{
+background-color: red;
+width: 20%;
+}
+
 .hidden {
     display: none;
 }
@@ -123,5 +137,18 @@ label, input, select{
     margin-right: 200px;
 }
 
+table {
+        border-collapse: collapse;
+        width: 100%;
+    }
 
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
 </style>

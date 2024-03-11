@@ -79,7 +79,7 @@
                                 <th>Eigenaar contact</th>
                                 <th>Status lead</th>
                             </tr>
-                            {{-- @foreach($contacts as $contact)
+                            @foreach($contacts as $contact)
                             <tr>
                                 <td>{{ $contact->name }}</td>
                                 <td>{{ $contact->email }}</td>
@@ -89,7 +89,7 @@
                                 <td>{{ $contact->contact_owner }}</td>
                                 <td>{{ $contact->lead_status }}</td>
                             </tr>
-                            @endforeach --}}
+                            @endforeach
                         </table>
                     </div>
                 </div>

@@ -8,9 +8,10 @@ use App\Models\Contacts;
 class ContactsController extends Controller
 {
 
-    public function contacten(){
+    public function index()
+    {
         $contacts = Contacts::all();
-        return route('contacten', ['contacten' => $contacts]);
+        return view('contacten')->with('contacts', $contacts);
     }
 
     public function store(Request $request){

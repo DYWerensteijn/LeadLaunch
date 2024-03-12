@@ -151,10 +151,6 @@ background-color: red;
 width: 20%;
 }
 
-.hidden {
-    display: none;
-}
-
 label, input, select{
     width: 40%;
     margin-right: 200px;

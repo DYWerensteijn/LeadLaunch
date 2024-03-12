@@ -13,6 +13,7 @@
                         <button id="showFormBtn">Show Form</button>
 
                         <div id="formContainer" class="hidden">
+                            <button id="closeFormBtn" class="close-btn">X</button>
                             <form id="myForm" action="{{ route('contacten.store') }}" method="POST">
                                 @csrf
                                 @method('post')
@@ -109,6 +110,11 @@ document.getElementById('myForm').addEventListener('submit', function() {
     var formContainer = document.getElementById('formContainer');
     formContainer.style.right = '-40%'; // Slide form away
 });
+
+document.getElementById('closeFormBtn').addEventListener('click', function() {
+    var formContainer = document.getElementById('formContainer');
+    formContainer.style.right = '-40%'; // Slide form away
+});
 </script>
 
 <style>
@@ -121,6 +127,17 @@ document.getElementById('myForm').addEventListener('submit', function() {
     height: 100%;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
 }
 
 #saveForm{

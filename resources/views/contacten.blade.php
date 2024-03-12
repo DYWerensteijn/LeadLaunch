@@ -114,6 +114,12 @@ document.getElementById('myForm').addEventListener('submit', function() {
 document.getElementById('closeFormBtn').addEventListener('click', function() {
     var formContainer = document.getElementById('formContainer');
     formContainer.style.right = '-40%'; // Slide form away
+
+    // Delay the form reset by 1 second
+    setTimeout(function() {
+        var form = document.getElementById('myForm'); // Get the form element
+        form.reset(); // Reset the form fields
+    }, 1000); // 1000 milliseconds = 1 second
 });
 </script>
 

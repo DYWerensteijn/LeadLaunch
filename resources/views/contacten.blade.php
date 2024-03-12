@@ -22,7 +22,7 @@
                                     </div>
                                     <div>
                                         <label>E-mail</label>
-                                        <input type="text" name="e-mail" placeholder="voorbeeld@mailservice.com">
+                                        <input type="text" name="email" placeholder="voorbeeld@mailservice.com">
                                     </div>
                                     <div>
                                         <label>Telefoonnummer</label>
@@ -69,7 +69,7 @@
                                 @endif
                             </div>
                         </div>
-                        <table border="3">
+                        <table>
                             <tr>
                                 <th>Naam</th>
                                 <th>E-mail</th>
@@ -83,7 +83,7 @@
                             <tr>
                                 <td>{{ $contact->name }}</td>
                                 <td>{{ $contact->email }}</td>
-                                <td>{{ $contact->phone_number }}</td>
+                                <td>0{{ $contact->phone_number }}</td>
                                 <td>{{ $contact->primary_company }}</td>
                                 <td>{{ $contact->city }}</td>
                                 <td>{{ $contact->contact_owner }}</td>

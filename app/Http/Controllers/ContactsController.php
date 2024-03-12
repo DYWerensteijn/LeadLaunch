@@ -11,13 +11,13 @@ class ContactsController extends Controller
     public function index()
     {
         $contacts = Contacts::all();
-        return view('contacten')->with('contacts', $contacts);
+        return view('contacten', ['contacts'=>$contacts]);
     }
 
     public function store(Request $request){
         $data = $request->validate([
         'name' => 'required',
-        'e-mail' => 'required|email',
+        'email' => 'required|email',
         'phone_number' => 'required|numeric',
         'primary_company' => 'required',
         'city' => 'required',

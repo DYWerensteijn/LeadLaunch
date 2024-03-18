@@ -15,13 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('naam');
             $table->string('bedrijfseigenaar');
-            $table->integer('telefoonnummer');
             $table->string('straat');
             $table->string('huisnummer');
             $table->string('postcode');
             $table->string('branche');
-            $table->dateTime('datum aanmaak');
-            $table->dateTime('datum laatste activiteit');
+            $table->dateTime('datum_aanmaak')->default(now());
         });
     }
 

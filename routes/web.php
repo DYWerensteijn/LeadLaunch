@@ -45,8 +45,25 @@ Route::prefix('contacten')->middleware(['auth', 'verified'])->group(function() {
         ->name('contacten.destroy');
 });
 
-Route::get('/bedrijven', [BedrijfController::class, 'indexB'])->middleware(['auth', 'verified'])->name('bedrijven');
-Route::post('/bedrijven',[BedrijfController::class, 'store'])->middleware(['auth', 'verified'])->name('bedrijven.store');
+Route::prefix('bedrijven')->middleware(['auth', 'verified'])->group(function() {
+    Route::get('', [BedrijfController::class, 'index'])
+        ->name('bedrijven');
+
+    Route::post('',[BedrijfController::class, 'store'])
+        ->name('bedrijven.store');
+
+    Route::get('/{company}/edit',[BedrijfController::class, 'edit'])
+        ->name('bedrijven.edit');
+
+    Route::post('/{company}/edit', [BedrijfController::class, 'editHandler'])
+        ->name('bedrijven.editHandler');
+
+    Route::delete('/{company}/destroy',[BedrijfController::class, 'deleteBedrijf'])
+        ->name('bedrijven.destroy');
+});
+
+// Route::get('/bedrijven', [BedrijfController::class, 'indexB'])->middleware(['auth', 'verified'])->name('bedrijven');
+// Route::post('/bedrijven',[BedrijfController::class, 'store'])->middleware(['auth', 'verified'])->name('bedrijven.store');
 
 // Route::get('/bedrijven', function () {
 //     return view('bedrijven');

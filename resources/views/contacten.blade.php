@@ -79,6 +79,8 @@
                                 <th>Plaatsnaam</th>
                                 <th>Eigenaar contact</th>
                                 <th>Status lead</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
                             </tr>
                             @foreach($contacts as $contact)
                             <tr>
@@ -89,6 +91,16 @@
                                 <td>{{ $contact->city }}</td>
                                 <td>{{ $contact->contact_owner }}</td>
                                 <td>{{ $contact->lead_status }}</td>
+                                <td>
+                                    <a href="{{route('contacten.edit', ['contacts' => $contact])}}">Edit</a>
+                                </td>
+                                <td>
+                                    <form method="post" action="{{ route('contacten.destroy', ['contacts' => $contact->id]) }}">
+                                        @csrf
+                                        @method('delete')
+                                        <input type="submit" value="Delete">
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </table>
@@ -124,6 +136,11 @@ document.getElementById('closeFormBtn').addEventListener('click', function() {
 </script>
 
 <style>
+
+    #showFormBtn{
+        background-color: #46d66d
+    }
+
     #formContainer {
     position: fixed;
     top: 0;

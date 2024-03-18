@@ -24,7 +24,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
+/**
+ * "Prefix" makes the route's have /contacten infront of them
+ * "Group" makes it so that all routes will be grouped, have the auth middleware and have the prefix
+ */
 Route::prefix('contacten')->middleware(['auth', 'verified'])->group(function() {
     Route::get('', [ContactsController::class, 'index'])
         ->name('contacten');
@@ -35,7 +38,10 @@ Route::prefix('contacten')->middleware(['auth', 'verified'])->group(function() {
     Route::get('/{contacts}/edit',[ContactsController::class, 'edit'])
         ->name('contacten.edit');
 
-    Route::get('/{contacts}/destroy',[ContactsController::class, 'destroy'])
+    Route::post('/{contacts}/edit', [ContactsController::class, 'editHandler'])
+        ->name('contacten.editHandler');
+
+    Route::delete('/{contacts}/destroy',[ContactsController::class, 'destroy'])
         ->name('contacten.destroy');
 });
 

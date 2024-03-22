@@ -14,36 +14,36 @@
 
                     <div id="formContainer" class="hidden">
                         <button id="closeFormBtn" class="close-btn">X</button>
-                        <form id="myForm" action="{{ route('bedrijven.store') }}" method="POST">
+                        <form id="myForm" action="{{ route('bedrijven.store') }}" method="POST" class="flex flex-wrap gap-4">
                             @csrf
                             @method('post')
-                                <div>
-                                    <label>Naam</label>
-                                    <input type="text" name="naam" placeholder="John Doe">
-                                </div>
-                                <div>
-                                    <label>bedrijfseigenaar</label>
-                                    <input type="text" name="bedrijfseigenaar" placeholder="Naamomi Namerland">
-                                </div>
-                                <div>
-                                    <label>straat</label>
-                                    <input type="text" name="straat" placeholder="Voorbeeldstraat">
-                                </div>
-                                <div>
-                                    <label>huisnummer</label>
-                                    <input type="text" name="huisnummer" placeholder="00">
-                                </div>
-                                <div>
-                                    <label>postcode</label>
-                                    <input type="text" name="postcode" placeholder="1122AB">
-                                </div>
-                                <div>
-                                    <label>Branche</label>
-                                    <input type="text" name="branche" placeholder="Marketing">
-                                </div>
-                                 <button class="btn btn-primary">
-                                         <input type="submit" value="sla bedrijf op">
-                                </button>
+                            <div class="w-full md:w-1/2 flex-shrink-0">
+                                <label for="naam" class="block">Naam</label>
+                                <input type="text" id="naam" name="naam" placeholder="John Doe" class="form-input">
+                            </div>
+                            <div class="w-full md:w-1/2 flex-shrink-0">
+                                <label for="bedrijfseigenaar" class="block">Bedrijfseigenaar</label>
+                                <input type="text" id="bedrijfseigenaar" name="bedrijfseigenaar" placeholder="Naamomi Namerland" class="form-input">
+                            </div>
+                            <div class="w-full md:w-1/2 flex-shrink-0">
+                                <label for="straat" class="block">Straat</label>
+                                <input type="text" id="straat" name="straat" placeholder="Voorbeeldstraat" class="form-input">
+                            </div>
+                            <div class="w-full md:w-1/2 flex-shrink-0">
+                                <label for="huisnummer" class="block">Huisnummer</label>
+                                <input type="text" id="huisnummer" name="huisnummer" placeholder="00" class="form-input">
+                            </div>
+                            <div class="w-full md:w-1/2 flex-shrink-0">
+                                <label for="postcode" class="block">Postcode</label>
+                                <input type="text" id="postcode" name="postcode" placeholder="1122AB" class="form-input">
+                            </div>
+                            <div class="w-full md:w-1/2 flex-shrink-0">
+                                <label for="branche" class="block">Branche</label>
+                                <input type="text" id="branche" name="branche" placeholder="Marketing" class="form-input">
+                            </div>
+                            <div class="w-full">
+                                <button type="submit" class="form-submit">Sla Bedrijf Op</button>
+                            </div>
                         </form>
                         <div>
                             @if($errors->any())
@@ -52,11 +52,10 @@
                                     <li>{{$error}}</li>
                                 @endforeach
                             </ul>
-
-                            @else
                             @endif
                         </div>
                     </div>
+
                     <table border="3">
                         <tr>
                             <th>Naam</th>
@@ -64,7 +63,8 @@
                             <th>Adres</th>
                             <th>Branche</th>
                             <th>Datum aanmaak</th>
-                            <th>Datum laatste activiteit</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         @foreach($bedrijven as $bedrijf)
                         <tr>
@@ -102,12 +102,12 @@
 
 document.getElementById('myForm').addEventListener('submit', function() {
     var formContainer = document.getElementById('formContainer');
-    formContainer.style.right = '-40%'; // Slide form away
+    formContainer.style.right = '-30%'; // Slide form away
 });
 
 document.getElementById('closeFormBtn').addEventListener('click', function() {
     var formContainer = document.getElementById('formContainer');
-    formContainer.style.right = '-40%'; // Slide form away
+    formContainer.style.right = '-30%'; // Slide form away
 
     // Delay the form reset by 1 second
     setTimeout(function() {
@@ -127,11 +127,11 @@ document.getElementById('closeFormBtn').addEventListener('click', function() {
     position: fixed;
     top: 0;
     transition: right 0.3s ease-in-out; /* Transition effect */
-    background-color: #4b6b64;
-    width: 40%;
+    background-color: #F0ECE5;
+    width: 30%;
     height: 100%;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 .close-btn {
     position: absolute;
@@ -148,11 +148,6 @@ document.getElementById('closeFormBtn').addEventListener('click', function() {
 #saveForm{
 background-color: red;
 width: 20%;
-}
-
-label, input, select{
-    width: 40%;
-    margin-right: 200px;
 }
 
 table {

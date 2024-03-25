@@ -10,7 +10,8 @@ class BedrijfController extends Bedrijven
 
     public function index()
     {
-        $bedrijven = Bedrijven::all();
+        // paginate is a function that makes it so the table only shows my chosen amount of records
+        $bedrijven = Bedrijven::paginate(5);
         return view('bedrijven', ['bedrijven'=>$bedrijven]);
     }
 
@@ -36,8 +37,8 @@ class BedrijfController extends Bedrijven
         return view('bedrijven.edit', ['company' => $bedrijven]);
     }
 
-
     public function editHandler(Request $request, $bedrijven){
+        //checks if the form is completeley filled. Else it gives me an Error message
         $data = $request->validate([
             'naam' => 'required',
             'bedrijfseigenaar' => 'required',
@@ -46,6 +47,7 @@ class BedrijfController extends Bedrijven
             'postcode' => 'required',
             'branche' => 'required'
         ]);
+        //if everything is filled in correctly, the database gets changed
         Bedrijven::where('id', $bedrijven)
             ->limit(1)
             ->update($data);

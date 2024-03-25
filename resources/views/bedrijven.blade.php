@@ -10,16 +10,24 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <button id="showFormBtn">Show Form</button>
+                    <button id="showFormBtn" class="form-styledbutton mb-4">Show Form</button>
+                    {{$bedrijven->links()}}
 
-                    <div id="formContainer" class="hidden">
-                        <button id="closeFormBtn" class="close-btn">X</button>
+                    <div id="formContainer" class="hidden bg-sand">
+                        <button id="closeFormBtn" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                            <span class="sr-only">Close menu</span>
+                            <!-- Heroicon name: outline/x -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
                         <form id="myForm" action="{{ route('bedrijven.store') }}" method="POST" class="flex flex-wrap gap-4">
                             @csrf
                             @method('post')
-                            <div class="w-full md:w-1/2 flex-shrink-0">
+                            <div class="w-full md:w-1/2 flex-shrink-0 mt-6">
                                 <label for="naam" class="block">Naam</label>
                                 <input type="text" id="naam" name="naam" placeholder="John Doe" class="form-input">
+                                {{--Class form input is a premade tailwind CSS styling, which I can repeat among the other input tags. I did this so the code looks cleaner. You can find the full styling in app.css--}}
                             </div>
                             <div class="w-full md:w-1/2 flex-shrink-0">
                                 <label for="bedrijfseigenaar" class="block">Bedrijfseigenaar</label>
@@ -41,11 +49,15 @@
                                 <label for="branche" class="block">Branche</label>
                                 <input type="text" id="branche" name="branche" placeholder="Marketing" class="form-input">
                             </div>
+                            <div class="w-full mt-4">
+                                <button type="submit" class="form-styledbutton">Sla Bedrijf Op</button>
+                            </div>
                             <div class="w-full">
-                                <button type="submit" class="form-submit">Sla Bedrijf Op</button>
+                                <button type="button" class="form-styledbutton">Annuleren</button>
                             </div>
                         </form>
                         <div>
+                            {{-- Add error message is form is empty --}}
                             @if($errors->any())
                             <ul>
                                 @foreach ($errors->all() as $error)
@@ -56,10 +68,10 @@
                         </div>
                     </div>
 
-                    <table border="3">
+                    <table>
                         <tr>
-                            <th>Naam</th>
-                            <th>bedrijfseigenaar</th>
+                            <th>Naam onderneming</th>
+                            <th>Bedrijfseigenaar</th>
                             <th>Adres</th>
                             <th>Branche</th>
                             <th>Datum aanmaak</th>
@@ -119,19 +131,14 @@ document.getElementById('closeFormBtn').addEventListener('click', function() {
 
 <style>
 
-    #showFormBtn{
-        background-color: #46d66d
-    }
-
     #formContainer {
     position: fixed;
     top: 0;
     transition: right 0.3s ease-in-out; /* Transition effect */
-    background-color: #F0ECE5;
     width: 30%;
     height: 100%;
     padding: 20px;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.123);
 }
 .close-btn {
     position: absolute;
@@ -143,11 +150,6 @@ document.getElementById('closeFormBtn').addEventListener('click', function() {
     border: none;
     padding: 5px 10px;
     border-radius: 50%;
-}
-
-#saveForm{
-background-color: red;
-width: 20%;
 }
 
 table {

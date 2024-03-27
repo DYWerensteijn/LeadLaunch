@@ -31,7 +31,7 @@
                             </div>
                             <div class="w-full md:w-1/2 flex-shrink-0">
                                 <label>E-mail</label>
-                                <input type="text" name="email" placeholder="voorbeeld@mailservice.com" class="form-input">
+                                <input type="text" name="email" placeholder="voorbeeld@mail.com" class="form-input">
                             </div>
                             <div class="w-full md:w-1/2 flex-shrink-0">
                                 <label>Telefoonnummer</label>
@@ -103,7 +103,7 @@
                             <td class="text-transform: capitalize">{{ $contact->primary_company }}</td>
                             <td class="text-transform: capitalize">{{ $contact->city }}</td>
                             <td class="text-transform: capitalize">{{ $contact->contact_owner }}</td>
-                            <td class="text-transform: uppercase">{{ $contact->lead_status }}</td>
+                            <td class="text-transform: normal-case">{{ $contact->lead_status }}</td>
                             <td>
                                 <a href="{{route('contacten.edit', ['contacts' => $contact])}}">Edit</a>
                             </td>

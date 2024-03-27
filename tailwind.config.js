@@ -11,11 +11,22 @@ export default {
 
     theme: {
         extend: {
+            // adds custom colors for Tailwind CSS
+            colors: {
+                'formbtn': '#B6BBC4',
+                'formhover': '#31304D',
+                'formbtndrk': '#161A30',
+                'formhoverdrk': '#31304D',
+                'sand': '#F0ECE5',
+                'sandbg': '#e3ddd3',
+                'sandbg2': '#f0e9df',
+
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },
-    },
 
+    },
     plugins: [forms],
 };

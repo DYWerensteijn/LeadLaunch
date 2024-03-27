@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('e-mail');
+            $table->string('email');
             $table->integer('phone_number');
             $table->string('primary_company');
             $table->string('city');
             $table->string('contact_owner');
-            $table->set('lead_status', ['nieuw','openen','in behandeling','deal openen','ongeklawilificeerd','geprobeerd contact op te nemen met','verbonden','slechte timing']);
+            $table->set('lead_status', ['nieuw','openen','in behandeling','deal openen','ongekwalificeerd','geprobeerd contact op te nemen met','verbonden','slechte timing']);
             $table->dateTime('last_activity')->useCurrent();
         });
     }

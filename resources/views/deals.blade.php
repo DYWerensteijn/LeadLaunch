@@ -18,42 +18,42 @@
                             @method('post')
                                 <div>
                                     <label>Gekoppeld Bedrijf</label>
-                                    <input type="text" name="name" placeholder="John Doe">
+                                    <input type="text" name="name" placeholder="BedrijfNaam">
                                 </div>
                                 <div>
                                     <label>Gekoppeld Contact</label>
-                                    <input type="text" name="e-mail" placeholder="voorbeeld@mailservice.com">
+                                    <input type="text" name="e-mail" placeholder="John Doe">
                                 </div>
                                 <div>
                                     <label>Afspraak ingepland</label>
-                                    <input type="tel" name="phone_number" maxlength="10" placeholder="0612345678">
+                                    <input type="tel" name="phone_number" placeholder="DD-MM-YYYY">
                                 </div>
                                 <div>
                                     <label>Gekwalificeerd om te kopen</label>
-                                    <input type="text" name="primary_company" placeholder="Bedrijf">
+                                    <input type="text" name="primary_company" placeholder="Yes/no">
                                 </div>
                                 <div>
                                     <label>presentatie ingepland</label>
-                                    <input type="text" name="city" placeholder="Voorbeeldstad">
+                                    <input type="text" name="city" placeholder="DD-MM-YYYY">
                                 </div>
                                 <div>
                                     <label>Besluitnemers ingebracht</label>
-                                    <input type="text" name="contact_owner" placeholder="Jane Doe">
+                                    <input type="text" name="contact_owner" placeholder="">
                                 </div>
                                 <div>
                                     <label>contract verzonden</label>
-                                    <input type="text" name="contact_owner" placeholder="Jane Doe">
+                                    <input type="text" name="contact_owner" placeholder="">
                                 </div>
                                 <div>
                                     <label>sluiting gewonnen</label>
-                                    <input type="text" name="contact_owner" placeholder="Jane Doe">
+                                    <input type="text" name="contact_owner" placeholder="">
                                 </div>
                                 <div>
                                     <label>sluiting verloren</label>
-                                    <input type="text" name="contact_owner" placeholder="Jane Doe">
+                                    <input type="text" name="contact_owner" placeholder="">
                                 </div>
                                  <button class="btn btn-primary">
-                                         <input type="submit" value="sla contact op">
+                                         <input type="submit" value="sla deal op">
                                 </button>
                         </form>
                         <div>

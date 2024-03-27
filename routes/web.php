@@ -27,6 +27,7 @@ Route::get('/dashboard', function () {
 /**
  * "Prefix" makes the route's have /contacten infront of them
  * "Group" makes it so that all routes will be grouped, have the auth middleware and have the prefix
+ * "auth, verified" checks if I am the right user who is logged in, so no-one can be logged into myaccount by using the URL
  */
 Route::prefix('contacten')->middleware(['auth', 'verified'])->group(function() {
     Route::get('', [ContactsController::class, 'index'])
@@ -62,16 +63,6 @@ Route::prefix('bedrijven')->middleware(['auth', 'verified'])->group(function() {
         ->name('bedrijven.destroy');
 });
 
-// Route::get('/bedrijven', [BedrijfController::class, 'indexB'])->middleware(['auth', 'verified'])->name('bedrijven');
-// Route::post('/bedrijven',[BedrijfController::class, 'store'])->middleware(['auth', 'verified'])->name('bedrijven.store');
-
-// Route::get('/bedrijven', function () {
-//     return view('bedrijven');
-// })->middleware(['auth', 'verified'])->name('bedrijven');
-
-// Route::post('/bedrijven',[BedrijfController::class, 'store'], function () {
-//     return view('bedrijven');
-// })->middleware(['auth', 'verified'])->name('bedrijven.store');
 
 Route::get('/deals', function () {
     return view('deals');

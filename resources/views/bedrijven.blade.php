@@ -11,6 +11,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <button id="showFormBtn" class="form-styledbutton mb-4">Show Form</button>
+                    {{-- Adds pagination buttons. --}}
                     {{$bedrijven->links()}}
 
                     <div id="formContainer" class="hidden bg-sand">
@@ -25,9 +26,9 @@
                             @csrf
                             @method('post')
                             <div class="w-full md:w-1/2 flex-shrink-0 mt-6">
-                                <label for="naam" class="block">Naam</label>
-                                <input type="text" id="naam" name="naam" placeholder="John Doe" class="form-input">
-                                {{--Class form input is a premade tailwind CSS styling, which I can repeat among the other input tags. I did this so the code looks cleaner. You can find the full styling in app.css--}}
+                                <label for="naam" class="block">Naam onderneming</label>
+                                <input type="text" id="naam" name="naam" placeholder="Bedrijf BV" class="form-input">
+                                {{--Class "form input" is a premade tailwind CSS styling, which I can repeat among the other input tags. I did this so the code looks cleaner. You can find the full styling in app.css--}}
                             </div>
                             <div class="w-full md:w-1/2 flex-shrink-0">
                                 <label for="bedrijfseigenaar" class="block">Bedrijfseigenaar</label>
@@ -78,6 +79,7 @@
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
+                            {{-- Posts records from tabble --}}
                         @foreach($bedrijven as $bedrijf)
                         <tr>
                             <td>{{ $bedrijf->naam }}</td>

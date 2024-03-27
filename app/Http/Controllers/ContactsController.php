@@ -10,7 +10,7 @@ class ContactsController extends Controller
 
     public function index()
     {
-        $contacts = Contacts::all();
+        $contacts = Contacts::paginate(5);
         return view('contacten', ['contacts'=>$contacts]);
     }
 

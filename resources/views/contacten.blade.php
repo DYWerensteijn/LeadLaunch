@@ -97,13 +97,13 @@
                         </tr>
                         @foreach($contacts as $contact)
                         <tr>
-                            <td>{{ $contact->name }}</td>
-                            <td>{{ $contact->email }}</td>
-                            <td>0{{ $contact->phone_number }}</td>
-                            <td>{{ $contact->primary_company }}</td>
-                            <td>{{ $contact->city }}</td>
-                            <td>{{ $contact->contact_owner }}</td>
-                            <td>{{ $contact->lead_status }}</td>
+                            <td class="text-transform: capitalize">{{ $contact->name }}</td>
+                            <td class="text-transform: lowercase">{{ $contact->email }}</td>
+                            <td> 0{{ $contact->phone_number }}</td0>
+                            <td class="text-transform: capitalize">{{ $contact->primary_company }}</td>
+                            <td class="text-transform: capitalize">{{ $contact->city }}</td>
+                            <td class="text-transform: capitalize">{{ $contact->contact_owner }}</td>
+                            <td class="text-transform: capitalize">{{ $contact->lead_status }}</td>
                             <td>
                                 <a href="{{route('contacten.edit', ['contacts' => $contact])}}">Edit</a>
                             </td>

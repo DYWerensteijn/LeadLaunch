@@ -82,10 +82,10 @@
                             {{-- Posts records from tabble --}}
                         @foreach($bedrijven as $bedrijf)
                         <tr>
-                            <td>{{ $bedrijf->naam }}</td>
-                            <td>{{ $bedrijf->bedrijfseigenaar }}</td>
-                            <td>{{ $bedrijf->straat }} {{ $bedrijf->huisnummer }} {{ $bedrijf->postcode }}</td>
-                            <td>{{ $bedrijf->branche }}</td>
+                            <td class="text-transform: capitalize">{{ $bedrijf->naam }}</td>
+                            <td class="text-transform: capitalize">{{ $bedrijf->bedrijfseigenaar }}</td>
+                            <td class="text-transform: capitalize">{{ $bedrijf->straat }} {{ $bedrijf->huisnummer }} {{ $bedrijf->postcode }}</td>
+                            <td class="text-transform: capitalize">{{ $bedrijf->branche }}</td>
                             <td>{{ $bedrijf->datum_aanmaak }}</td>
                             <td>
                                 <a href="{{route('bedrijven.edit', ['company' => $bedrijf])}}">Edit</a>

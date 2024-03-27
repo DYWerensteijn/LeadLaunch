@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* here are my custom made classes, so I can repeat styling while having clear code */
+@layer components{
+    .form-input{
+        @apply block w-full border-gray-300 rounded-md shadow-sm focus:border-yellow-900 focus:ring focus:ring-yellow-800 focus:ring-opacity-10;
+    }
+    .form-styledbutton{
+        @apply bg-formbtn hover:bg-formhover text-formhover font-semibold hover:text-sand py-2 px-4 border border-formbtndrk hover:border-transparent rounded;
+    }
+}

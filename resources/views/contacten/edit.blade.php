@@ -43,7 +43,7 @@
                                 <option value="nieuw">{{__('Nieuw') }}</option>
                                 <option value="openen">{{__('Openen') }}</option>
                                 <option value="in behandeling">{{__('In behandeling') }}</option>
-                                <option value="deal openen">{{__('Deal openen<')}}/option>
+                                <option value="deal openen">{{__('Deal openen')}}</option>
                                 <option value="ongekwalificeerd">{{__('Ongekwalificeerd') }}</option>
                                 <option value="geprobeerd contact op te nemen met">{{__('Geprobeerd contact op te nemen met') }}</option>
                                 <option value="verbonden">{{__('Verbonden') }}</option>

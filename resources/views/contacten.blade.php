@@ -98,8 +98,8 @@
                         @foreach($contacts as $contact)
                         <tr>
                             <td class="text-transform: capitalize">{{ $contact->name }}</td>
-                            <td class="text-transform: lowercase">{{ $contact->email }}</td>
-                            <td> 0{{ $contact->phone_number }}</td>
+                            <td class="text-transform: lowercase"><a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></td>
+                            <td> <a href="tel:0{{ $contact->phone_number }}">0{{ $contact->phone_number }}</a> </td>
                             <td class="text-transform: capitalize">{{ $contact->primary_company }}</td>
                             <td class="text-transform: capitalize">{{ $contact->city }}</td>
                             <td class="text-transform: capitalize">{{ $contact->contact_owner }}</td>

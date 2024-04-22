@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Bedrijven extends Model
 {
     public $table = 'bedrijven';
+
     use HasFactory;
+
     protected $fillable = [
         'naam',
         'bedrijfseigenaar',

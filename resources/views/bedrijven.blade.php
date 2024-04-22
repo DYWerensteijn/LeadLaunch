@@ -142,18 +142,6 @@ document.getElementById('closeFormBtn').addEventListener('click', function() {
     padding: 20px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.123);
 }
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: white;
-    background-color: red;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 50%;
-}
-
 table {
         border-collapse: collapse;
         width: 100%;

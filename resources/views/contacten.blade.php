@@ -108,7 +108,7 @@
                             <td class="text-transform: capitalize">{{ $contact->primary_company }}</td>
                             <td class="text-transform: capitalize">{{ $contact->city }}</td>
                             <td class="text-transform: capitalize">{{ $contact->contact_owner }}</td>
-                            <td class="text-transform: normal-case">{{ $contact->lead_status }}</td>
+                            <td class="text-transform:">{{ ucfirst(trans($contact->lead_status)) }}</td>
                             <td>
                                 <a href="{{route('contacten.edit', ['contacts' => $contact])}}">Edit</a>
                             </td>

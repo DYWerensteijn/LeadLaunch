@@ -12,6 +12,11 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <button id="showFormBtn" class="form-styledbutton mb-4">{{__('Show Form')}}</button>
                     {{$contacts->links()}}
+                    <select name="" id="">
+                        <option value="5"></option>
+                        <option value="10"></option>
+                        <option value="15"></option>
+                    </select>
                     <div id="formContainer" class="hidden bg-sand">
                         <button id="closeFormBtn" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                             <span class="sr-only">{{__('Close menu')}}</span>
@@ -98,8 +103,8 @@
                         @foreach($contacts as $contact)
                         <tr>
                             <td class="text-transform: capitalize">{{ $contact->name }}</td>
-                            <td class="text-transform: lowercase">{{ $contact->email }}</td>
-                            <td> 0{{ $contact->phone_number }}</td>
+                            <td class="text-transform: lowercase"><a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></td>
+                            <td> <a href="tel:0{{ $contact->phone_number }}">0{{ $contact->phone_number }}</a> </td>
                             <td class="text-transform: capitalize">{{ $contact->primary_company }}</td>
                             <td class="text-transform: capitalize">{{ $contact->city }}</td>
                             <td class="text-transform: capitalize">{{ $contact->contact_owner }}</td>

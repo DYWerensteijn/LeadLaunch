@@ -19,11 +19,10 @@ return new class extends Migration
             $table->string('primary_company');
             $table->string('city');
             $table->string('contact_owner');
-            $table->set('lead_status', ['nieuw','openen','in behandeling','deal openen','ongekwalificeerd','geprobeerd contact op te nemen met','verbonden','slechte timing']);
+            $table->set('lead_status', ['nieuw', 'openen', 'in behandeling', 'deal openen', 'ongekwalificeerd', 'geprobeerd contact op te nemen met', 'verbonden', 'slechte timing']);
             $table->dateTime('last_activity')->useCurrent();
         });
     }
-
 
     public function down(): void
     {

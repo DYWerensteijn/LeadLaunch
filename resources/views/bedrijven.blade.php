@@ -10,7 +10,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <button id="showFormBtn" class="form-styledbutton mb-4">Show Form</button>
+                    <button id="showFormBtn" class="form-styledbutton mb-4">{{__('Show Form')}}</button>
                     {{-- Adds pagination buttons. --}}
                     {{$bedrijven->links()}}
 
@@ -142,18 +142,6 @@ document.getElementById('closeFormBtn').addEventListener('click', function() {
     padding: 20px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.123);
 }
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: white;
-    background-color: red;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 50%;
-}
-
 table {
         border-collapse: collapse;
         width: 100%;

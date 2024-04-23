@@ -10,7 +10,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <button id="showFormBtn" class="form-styledbutton mb-4">Show Form</button>
+                    <button id="showFormBtn" class="form-styledbutton mb-4">{{__('Show Form')}}</button>
                     {{$contacts->links()}}
                     <select name="" id="">
                         <option value="5"></option>
@@ -19,7 +19,7 @@
                     </select>
                     <div id="formContainer" class="hidden bg-sand">
                         <button id="closeFormBtn" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                            <span class="sr-only">Close menu</span>
+                            <span class="sr-only">{{__('Close menu')}}</span>
                             <!-- Heroicon name: outline/x -->
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -51,7 +51,7 @@
                                 <input type="text" name="city" placeholder="Voorbeeldstad" class="form-input">
                             </div>
                             <div class="w-full md:w-3/4 flex-shrink-0">
-                                <label>{{__('Eigenaar')}} contact</label>
+                                <label>{{__('Eigenaar contact')}} </label>
                                 <input type="text" name="contact_owner" placeholder="Jane Doe" class="form-input">
                             </div>
                             <div class="w-full md:w-3/4 flex-shrink-0">
@@ -69,10 +69,10 @@
                              </div>
                             <div class="w-full mt-4">
                                 {{-- using "styledbutton" I desigend. Check app.css --}}
-                                <button type="submit" class="form-styledbutton">Sla contact op</button>
+                                <button type="submit" class="form-styledbutton">{{__('Sla contact op')}}</button>
                             </div>
                             <div class="w-full">
-                                <button type="button" class="form-styledbutton">Annuleren</button>
+                                <button type="button" class="form-styledbutton">{{__('Annuleren')}}</button>
                             </div>
                         </form>
                         <div>
@@ -88,7 +88,7 @@
                     </div>
                     {{-- End form elements --}}
 
-                    <table>
+                    <table class="border-collapse w-full">
                         <tr>
                             <th>{{__('Naam')}}</th>
                             <th>{{__('E-mail')}}</th>
@@ -164,22 +164,6 @@ document.getElementById('closeFormBtn').addEventListener('click', function() {
     padding: 20px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.123);
 }
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: white;
-    background-color: red;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 50%;
-}
-
-table {
-        border-collapse: collapse;
-        width: 100%;
-    }
 
     th, td {
         border: 1px solid #dddddd;

@@ -15,27 +15,27 @@
     @csrf
     @method('post')
     <div>
-        <label>Naam</label>
+        <label>{{__('Naam')}}</label>
         <input value="{{$bedrijf->naam}}" type="text" name="naam" placeholder="John Doe">
     </div>
     <div>
-        <label>bedrijfseigenaar</label>
+        <label>{{__('bedrijfseigenaar')}}</label>
         <input value="{{$bedrijf->bedrijfseigenaar}}" type="text" name="bedrijfseigenaar" placeholder="Naamomi Namerland">
     </div>
     <div>
-        <label>straat</label>
+        <label>{{__('straat')}}</label>
         <input value="{{$bedrijf->straat}}" type="text" name="straat" placeholder="Voorbeeldstraat">
     </div>
     <div>
-        <label>huisnummer</label>
+        <label>{{__('huisnummer')}}</label>
         <input value="{{$bedrijf->huisnummer}}" type="text" name="huisnummer" placeholder="00">
     </div>
     <div>
-        <label>postcode</label>
+        <label>{{__('postcode')}}</label>
         <input value="{{$bedrijf->postcode}}" type="text" name="postcode" placeholder="1122AB">
     </div>
     <div>
-        <label>Branche</label>
+        <label>{{__('Branche')}}</label>
         <input value="{{$bedrijf->branche}}" type="text" name="branche" placeholder="Marketing">
     </div>
      <button class="btn btn-primary">

@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+// importing base controller
+use App\Http\Controllers\Controller;
+
 use App\Models\Bedrijven;
 use Illuminate\Http\Request;
 
-class BedrijfController extends Bedrijven
+
+class BedrijfController extends Controller
 {
     public function index()
     {

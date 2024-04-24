@@ -103,20 +103,20 @@
                         @foreach($contacts as $contact)
                         <tr>
                             <td class="text-transform: capitalize">{{ $contact->name }}</td>
-                            <td class="text-transform: lowercase text-cyan-600"><a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></td>
-                            <td class="text-cyan-600"> <a href="tel:0{{ $contact->phone_number }}">0{{ $contact->phone_number }}</a> </td>
+                            <td class="text-transform: lowercase text-cyan-600 hover:underline"><a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></td>
+                            <td class="text-cyan-600 hover:underline"> <a href="tel:0{{ $contact->phone_number }}">0{{ $contact->phone_number }}</a> </td>
                             <td class="text-transform: capitalize">{{ $contact->primary_company }}</td>
                             <td class="text-transform: capitalize">{{ $contact->city }}</td>
                             <td class="text-transform: capitalize">{{ $contact->contact_owner }}</td>
-                            <td class="text-transform:">{{ ucfirst(trans($contact->lead_status)) }}</td>
+                            <td>{{ ucfirst(trans($contact->lead_status)) }}</td>
                             <td>
-                                <a href="{{route('contacten.edit', ['contacts' => $contact])}}">Edit</a>
+                                <a class="hover:underline" href="{{route('contacten.edit', ['contacts' => $contact])}}">Edit</a>
                             </td>
                             <td>
                                 <form method="post" action="{{ route('contacten.destroy', ['contacts' => $contact->id]) }}">
                                     @csrf
                                     @method('delete')
-                                    <input type="submit" value="Delete">
+                                    <input type="submit" value="Delete" class="hover:underline cursor-pointer">
                                 </form>
                             </td>
                         </tr>

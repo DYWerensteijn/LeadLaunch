@@ -88,13 +88,13 @@
                             <td class="text-transform: capitalize">{{ $bedrijf->branche }}</td>
                             <td>{{ $bedrijf->datum_aanmaak }}</td>
                             <td>
-                                <a href="{{route('bedrijven.edit', ['company' => $bedrijf])}}">{{__('Edit')}}</a>
+                                <a  class="hover:underline" href="{{route('bedrijven.edit', ['company' => $bedrijf])}}">{{__('Edit')}}</a>
                             </td>
                             <td>
-                                <form method="post" action="{{ route('bedrijven.destroy', ['company' => $bedrijf->id]) }}">
+                                <form  method="post" action="{{ route('bedrijven.destroy', ['company' => $bedrijf->id]) }}">
                                     @csrf
                                     @method('delete')
-                                    <input type="submit" value="Delete">
+                                    <input type="submit" value="Delete" class="hover:underline cursor-pointer">
                                 </form>
                             </td>
                         </tr>
